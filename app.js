@@ -84,6 +84,6 @@ app.use(commentRoutes);
 //setup db
 // mongoose.connect('mongodb://localhost/ten');
 // mongoose.connect('mongodb://germanarcila:mandarino@ds127260.mlab.com:27260/germanphoto');
-mongoose.connect(process.env.DATABASEURL || 'mongodb://localhost/photoG');
+mongoose.connect(process.env.DATABASEURL);
 
 app.listen(process.env.DATABASEURL || PORT, () => console.log(`Server staterted on port ${PORT}`));
