@@ -36,7 +36,7 @@ const listRoutes = require('./routes/lists');
 const indexRoutes = require('./routes/index');
 
 //define port to run on
-const port = 3000;
+const PORT = 3000;
 
 app.use(expressSanitizer());
 
@@ -83,5 +83,7 @@ app.use(commentRoutes);
 //DB CONFIG___________________________________________________________________
 //setup db
 // mongoose.connect('mongodb://localhost/ten');
-mongoose.connect('mongodb://germanarcila:mandarino@ds127260.mlab.com:27260/germanphoto')
-app.listen(process.env.PORT || 3000, () => console.log(`Server staterted on port ${port}`));
+// mongoose.connect('mongodb://germanarcila:mandarino@ds127260.mlab.com:27260/germanphoto');
+mongoose.connect(process.env.DATABASEURL || 'mongodb://localhost/photoG');
+
+app.listen(process.env.DATABASEURL || PORT, () => console.log(`Server staterted on port ${PORT}`));
