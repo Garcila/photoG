@@ -86,4 +86,4 @@ app.use(commentRoutes);
 mongoose.connect('mongodb://germanarcila:mandarino@ds127260.mlab.com:27260/germanphoto');
 // mongoose.connect(process.env.DBURL);
 
-app.listen(PORT, () => console.log(`Server staterted on port ${PORT}`));
+app.listen(process.env.DBURL || PORT, () => console.log(`Server staterted on port ${PORT}`));
